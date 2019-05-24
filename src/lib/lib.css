@@ -1,0 +1,13 @@
+/**
+ * 地图信息控件
+ */
+
+.leaflet-control-mapinfo {
+	background: #FFFFFF;
+	padding: 5px;
+	font-size: 14px;
+}
+
+.leaflet-control-mapinfo span {
+	padding-left: 10px;
+}

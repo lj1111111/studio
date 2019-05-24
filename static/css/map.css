@@ -1,0 +1,638 @@
+.leaflet-contextmenu {
+    display: none;
+    box-shadow: 0 1px 7px rgba(0,0,0,0.4);
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 4px 0;
+    background-color: #fff;
+    cursor: default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.leaflet-contextmenu a.leaflet-contextmenu-item {
+    display: block;
+    color: #222;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none;
+    padding: 0 12px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    cursor: default;
+    outline: none;
+}
+
+.leaflet-contextmenu a.leaflet-contextmenu-item-disabled {
+    opacity: 0.5;
+}
+
+.leaflet-contextmenu a.leaflet-contextmenu-item.over {
+    background-color: #f4f4f4;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.leaflet-contextmenu a.leaflet-contextmenu-item-disabled.over {
+    background-color: inherit;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.leaflet-contextmenu-icon {
+    margin: 2px 8px 0 0;
+    width: 16px;
+    height: 16px;
+    float: left;
+    border: 0;
+}
+
+.leaflet-contextmenu-separator {
+    border-bottom: 1px solid #ccc;
+    margin: 5px 0;
+}
+.leaflet-label{
+    position: absolute;
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    color: #000;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+.marker-icon,
+.marker-icon:focus {
+  background-color: #ffffff;
+  border: 1px solid #3388ff;
+  border-radius: 50%;
+  margin: -8px 0 0 -8px !important;
+  width: 14px !important;
+  height: 14px !important;
+  outline: 0;
+  transition: opacity ease 0.3s;
+}
+
+.marker-icon-middle,
+.marker-icon-middle:focus {
+  opacity: 0.7;
+  margin: -6px 0 0 -6px !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.leaflet-pm-draggable {
+  cursor: move !important;
+}
+
+.cursor-marker {
+  cursor: crosshair;
+  pointer-events: none;
+  display: none;
+}
+
+.cursor-marker.visible {
+  display: block !important;
+}
+
+.leaflet-pm-invalid {
+  stroke: red;
+  transition: fill ease 0s, stroke ease 0s;
+}
+
+.rect-style-marker,
+.rect-start-marker {
+  opacity: 0;
+}
+
+.rect-style-marker.visible,
+.rect-start-marker.visible {
+  opacity: 1 !important;
+}
+
+.hidden {
+  display: none;
+}
+.leaflet-pm-toolbar {
+
+
+}
+
+.leaflet-pm-toolbar .leaflet-buttons-control-button {
+    padding: 3px;
+    box-sizing: border-box;
+}
+.leaflet-pm-toolbar .control-icon {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: .8;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.leaflet-pm-toolbar .leaflet-pm-icon-marker {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAZCAYAAADTyxWqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFENzY1MUQyODUzNzExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFENzY1MUQxODUzNzExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+bwCVTQAAARZJREFUeNqclQERwyAMRaEGhoRKmAQkVEIlIKESJgEJSNgcVELngClgcBd2LCWBkrt/t63JCwlLKkIIAiuaijJRe1RASr+tyecUVwHpqKMCwUo+moRBxnBR6wkGJ6JOYKMeRNlJdwzDpXlcRpEUQ48frFKez9mYC8LJ1/zQUX1ggLgtLj/460ELRLTGT1LKdOTSXqLfjuLzbUq9QQ6zGLVamQnYUaLCcRMwPyjH1nEOg76/qdtkb5SYFNsaI1f+36C/lvDV3ARc0ROP0zII8vnCcC/cAMxQK0hBpl6Qay3H5UJ5ioUBcOuA6eba7uyfqcY0xqW2WS0Z0zF/O3ozqSEYAGdotudASRICWIs77w4bZuf8vgIMAAI1tNMVERhgAAAAAElFTkSuQmCC);
+}
+.leaflet-pm-toolbar .leaflet-pm-icon-polygon {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAZCAYAAAAv3j5gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQwM0ZDNzlCODUzNDExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQwM0ZDNzlBODUzNDExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+qfabAwAAAYxJREFUeNqsVj1PwzAUjKtuCMHOViExIRXEQNUOjEiIj5GNEXUiDPwJOtD+g1SMLFUnRtgR4hcgdWEGVczh3L6WlxfHsVOfdHIdO3ft1X62StM0coVSKjMZ7yrXd2uRJ7S4j4GXEX7JJtg3PO/rMddvaCXQBD/01ALqsWapTolJLESfwEvwlD7zsdimpUyLgeJIwHN6NAUfwDcx9QC8Bdep/wpeQPM7pymNYHKEZgRu0KN3sAf+FqS/Bt6B+9T/IbOXQiP6w2/Y+CNF5IIT8Jr1B9COl9qUr8QXeA9+eq7iBtgFd3LRzRfefF/QhnwGh5aoyqCjvAKPua7J6CwKgzHXrZtKSyhw3Rq5DtgyDoUpWxRqUYISavV+2A1gcsj2VrKsdXDUZWRCA3sBjLapnZB2pqiOqG0FMGoLzYzRIr4t2g9V0SANrvlvJOLrrGDUkbGZzqMQ8bVkbCajVeMzxpYzChCfMbaiY0JWCdeSNLZdXIxGovZ5XVykRuVbUFXUy4qh69VqdhRYEvgTYAAqrQMfMqEIJwAAAABJRU5ErkJggg==);
+}
+.leaflet-pm-toolbar .leaflet-pm-icon-polyline {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQwM0ZDNzlGODUzNDExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQwM0ZDNzlFODUzNDExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KUUD2gAAAJhJREFUeNq01dsNwCAIhWHZyO4/RDtKN6DwYKP2ouDBhNhL8n+PEDMn5CGiJkgRgBwqz1BAglmuvQaSAoiRo/FThpsJiOud73+R8WVgFF8CZuJuYDbuAixxM2CNmwBPfBrwxqeAlfgQWI3/Aoj4J4CKvwLI+ANAxxsgIl6WGXcDi+voamt2qFybvB+wNdoD5RkK1B/QwCXAAMyWX2PeMm23AAAAAElFTkSuQmCC);
+    background-size: 80%;
+}
+.leaflet-pm-toolbar .leaflet-pm-icon-circle {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkQwM0ZDNzk3ODUzNDExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkQwM0ZDNzk2ODUzNDExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ZDy0gwAAAW9JREFUeNq8lj1Ow0AQhb0WbcgBaKKcwC1VaCjcoFCnyRG4QBq4QI6QxlWQQDRpSZWWEyBHgh7CAcwb6Y0ZlpVjYydPerJ3d/ab7Hp/4oqiiOrIOfcrEP1cnX7xHmgCz+FcoQqWOnghMZUZZAS+oQH8LM3Wpr3wLLGDICsAH8MfpvMbvAxAl2zTsvQZ+zxnvwGGK/AHFndwBq/2THMKT+BTlq/BfCyZmgBwmZYXuA9/wTP4NaqnIXwH9+BPOAE39z/ygvBdQ3jE2Bn79sn6WUVcCSPWZQ3hNknG95GuLh3BDZ/vNea8SisySqYmuOBzE7XXxjIdl5jVVcsET392st2hXcjy4ujAOgkdZG1leTGHsjV7oa3u+dwKW6dIt/ZlBwnOLTP2fvkZz5b/KiWjZOoqkjNozYYJz5amGrKvaE3mEQ87VkxZlMDbmtOVMrbH8lThwRut6wvn+Feml0iO3DmcBxLkbEuqGO7Qf1u+BRgABphW5i4/+hMAAAAASUVORK5CYII=);
+    background-size: 90%;
+}
+.leaflet-pm-toolbar .leaflet-pm-icon-rectangle {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkM4QUVDQzQ2ODUzNDExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkM4QUVDQzQ1ODUzNDExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+J3lsvQAAAFpJREFUeNrsljsOACAIQ1sPyGG9IJq4IKOfQdNuhuQ90gUJwBHi7sRGSE48DuaA5uFqIq/gcpgr6rFNZo2Pkjq3A0tbrOp6RRJIIIEEEjxxcD68yae/LU2AAQC7fSa9H1rL6AAAAABJRU5ErkJggg==);
+    background-size: 90%;
+}
+.leaflet-pm-toolbar .leaflet-pm-icon-drag {
+    /*background-image: url('../assets/icons/drag.png');*/
+}
+.leaflet-pm-toolbar .leaflet-pm-icon-delete {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjk5QzE2QjUyODUzMzExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjk5QzE2QjUxODUzMzExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+UGbNXAAAAI5JREFUeNpi+P//PwM2DAQNQPwfB27ApY8RqhkFMDIyCgCp9wx4AFAfIzZxFgYCAF0j0LL/+NQz4TDkAwOZAGQ7SDM/A3XARyYGKgOskUIRgBr4AU8SIRZ/gCcbQjFHguMYqR6G2AzMhmJyxLAm7McUiDHQxcujBo4aOOQNxJb1ZCkQG6LFF9kVFIgACDAAqr5rFp6MjMcAAAAASUVORK5CYII=);
+    background-size: 70%;
+}
+.leaflet-pm-toolbar .leaflet-pm-icon-edit {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAVCAYAAABc6S4mAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgzRTE5MjcxODUzNTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjgzRTE5MjcwODUzNTExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+4jFzXwAAAOdJREFUeNq0leENhCAMheEmuREc4UZwBEdihI7CKLqBG9RWi+F6aqBwTd4PaPkeIbY6RHQ9RRFIkTTs6z/AUbSySU/4tAMPcDKJKTmS5ixRIga95TzIHiiTkOBogA8KjsokSP68ORieBW4uMGU1x2ZHOKi6eoNSuMmgBl5tUAuvMrDAiw1Uh/7A0ydrMpA+0R36Bedci8F60aGg8mgykPly2aFZDbYYRDUePhc1NgMeZOdEzFq/1sBLAS+8U+G952k5u4egmtvzHC/SIoWgkwXwdGZ5qrOMa63x9gkbfjgoZ8anJt0EGAAZUK4sZc82dAAAAABJRU5ErkJggg==);
+    background-size: 80%;
+    background-position: 4px center;
+}
+.leaflet-pm-toolbar .leaflet-pm-icon-cut {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAYAAAD+4+QTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABAhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ1dWlkOjY1RTYzOTA2ODZDRjExREJBNkUyRDg4N0NFQUNCNDA3IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkNDNkM0RTY5ODUzNzExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkNDNkM0RTY4ODUzNzExRTU4RTQwRkQwODFEOUZEMEE3IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE1IChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MTk5NzA1OGEtZDI3OC00NDZkLWE4ODgtNGM4MGQ4YWI1NzNmIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YzRkZmQxMGMtY2NlNS0xMTc4LWE5OGQtY2NkZmM5ODk5YWYwIi8+IDxkYzp0aXRsZT4gPHJkZjpBbHQ+IDxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+Z2x5cGhpY29uczwvcmRmOmxpPiA8L3JkZjpBbHQ+IDwvZGM6dGl0bGU+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+UbC4LAAAATFJREFUeNrUVosRgyAMhU5gN3AER3AER2AER7AbOIIjdAS7gSO4Qd2AEu+ll6JYP9i75i4nIrxHkgeorbVKa50opYxzevbO765/ULGMSJy11BROBBV9i+FkuQBu8GSyOhYJR1GJzpqJYpBogJFduQ6o0RPp1EdLIkluSA8T2T0kWGDhPEVX85EaLjiUtjpdACxnBETe8aAS0vUH2AXgDAucnQdvR2F5E83MJHo3YkzuKTAI/p4TWKUZw5ySVdiwKaLwySj/2QTvS65zkedBOJMlaBN4GsRZWViL6IwnknoJfG0kmSAZFmqxPRKvJgYpGbYAB0kC6urE9wJy51O7F5HaUHv3Ptl6QB7e8WtImGCUpaeo/zmFL84faJeiv1KR7fyb8Rd3vObquzqUZ/2tvAQYANwXksvfGBuLAAAAAElFTkSuQmCC);
+    background-size: 80%;
+    background-position: 4px center;
+}
+
+.leaflet-buttons-control-button:hover {
+    cursor: pointer;
+    background-color: #f4f4f4;
+}
+.leaflet-buttons-control-button.active {
+    background-color: #f4f4f4;
+}
+
+.leaflet-buttons-control-button.active > .control-icon {
+    opacity: .5;
+}
+
+.leaflet-buttons-control-text-hide {
+    display: none;
+}
+
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+	-webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+	-moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+	-o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+	transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+}
+
+.leaflet-cluster-spider-leg {
+	/* stroke-dashoffset (duration and function) should match with leaflet-marker-icon transform in order to track it exactly */
+	-webkit-transition: -webkit-stroke-dashoffset 0.3s ease-out, -webkit-stroke-opacity 0.3s ease-in;
+	-moz-transition: -moz-stroke-dashoffset 0.3s ease-out, -moz-stroke-opacity 0.3s ease-in;
+	-o-transition: -o-stroke-dashoffset 0.3s ease-out, -o-stroke-opacity 0.3s ease-in;
+	transition: stroke-dashoffset 0.3s ease-out, stroke-opacity 0.3s ease-in;
+}
+
+.marker-cluster-small {
+	background-color: rgba(181, 226, 140, 0.6);
+	}
+.marker-cluster-small div {
+	background-color: rgba(110, 204, 57, 0.6);
+	}
+
+.marker-cluster-medium {
+	background-color: rgba(241, 211, 87, 0.6);
+	}
+.marker-cluster-medium div {
+	background-color: rgba(240, 194, 12, 0.6);
+	}
+
+.marker-cluster-large {
+	background-color: rgba(253, 156, 115, 0.6);
+	}
+.marker-cluster-large div {
+	background-color: rgba(241, 128, 23, 0.6);
+	}
+
+	/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+	background-color: rgb(181, 226, 140);
+	}
+.leaflet-oldie .marker-cluster-small div {
+	background-color: rgb(110, 204, 57);
+	}
+
+.leaflet-oldie .marker-cluster-medium {
+	background-color: rgb(241, 211, 87);
+	}
+.leaflet-oldie .marker-cluster-medium div {
+	background-color: rgb(240, 194, 12);
+	}
+
+.leaflet-oldie .marker-cluster-large {
+	background-color: rgb(253, 156, 115);
+	}
+.leaflet-oldie .marker-cluster-large div {
+	background-color: rgb(241, 128, 23);
+}
+
+.marker-cluster {
+	background-clip: padding-box;
+	border-radius: 20px;
+	}
+.marker-cluster div {
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 5px;
+
+	text-align: center;
+	border-radius: 15px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	}
+.marker-cluster span {
+	line-height: 30px;
+	}
+.measure-close{
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    pointer-events: auto;
+    cursor: pointer;
+    font-weight: bold;
+    color: red;
+}
+.leaflet-control-minimap {
+    border:solid rgba(255, 255, 255, 1.0) 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    border-radius: 3px;
+    background: #f8f8f9;
+    transition: all .6s;
+}
+
+.leaflet-control-minimap a {
+    background-color: rgba(255, 255, 255, 1.0);
+    background-repeat: no-repeat;
+    z-index: 99999;
+    transition: all .6s;
+}
+
+.leaflet-control-minimap a.minimized-bottomright {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    border-radius: 0px;
+}
+
+.leaflet-control-minimap a.minimized-topleft {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-radius: 0px;
+}
+
+.leaflet-control-minimap a.minimized-bottomleft {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    border-radius: 0px;
+}
+
+.leaflet-control-minimap a.minimized-topright {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    border-radius: 0px;
+}
+
+.leaflet-control-minimap-toggle-display{
+    background-image: url("images/toggle.svg");
+    background-size: cover;
+    position: absolute;
+    border-radius: 3px 0px 0px 0px;
+}
+
+.leaflet-oldie .leaflet-control-minimap-toggle-display{
+    background-image: url("images/toggle.png");
+}
+
+.leaflet-control-minimap-toggle-display-bottomright {
+    bottom: 0;
+    right: 0;
+}
+
+.leaflet-control-minimap-toggle-display-topleft{
+    top: 0;
+    left: 0;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.leaflet-control-minimap-toggle-display-bottomleft{
+    bottom: 0;
+    left: 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.leaflet-control-minimap-toggle-display-topright{
+    top: 0;
+    right: 0;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+/* Old IE */
+.leaflet-oldie .leaflet-control-minimap {
+    border: 1px solid #999;
+}
+
+.leaflet-oldie .leaflet-control-minimap a {
+    background-color: #fff;
+}
+
+.leaflet-oldie .leaflet-control-minimap a.minimized {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+.leaflet-se-pane{
+    z-index: 250;
+}
+.seEditControl {
+    background: #ffffff;
+}
+
+.se-bar-foot {
+    cursor: pointer;
+    padding: 0 2px;
+    display: inline-block;
+    height: 100%;
+    font-size: 18px;
+}
+
+.se-bar-select {
+    background: #EEEEEE;
+}
+.icon-finishEdit{
+    color: #ff0000;
+}
+@font-face {
+	font-family:'Super';
+	src:url('fonts/superfont.eot?v=4.4.0');
+	src:url('fonts/superfont.eot?#iefix&v=4.4.0') format('embedded-opentype'),
+		url('fonts/superfont.woff?v=4.4.0') format('woff2'),
+		url('fonts/superfont.woff?v=4.4.0') format('woff'),
+		url('fonts/superfont.ttf?v=4.4.0') format('truetype'),
+		url('fonts/superfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+	font-weight:normal;
+	font-style:normal
+}
+.icon-arrow:before{
+    font-family:Super;content:"\006D";
+}
+.icon-right:before{
+    font-family:Super;content:"\0068";
+}
+.icon-scale:before{
+    font-family:Super;content:"\007B";
+}
+.icon-remove:before{
+    font-family:Super;content:"\00AE";
+}
+.icon-choose:before{
+    font-family:Super;content:"\00AF";
+}
+.icon-capture:before{
+    font-family:Super;content:"\00B0";
+}
+.icon-opacity:before{
+    font-family:Super;content:"\00B1";
+}
+.icon-edit:before{
+    font-family:Super;content:"\00B2";
+}
+.icon-enlarge:before{
+    font-family:Super;content:"\004c";
+}
+.icon-narrow:before{
+    font-family:Super;content:"\004D";
+}
+.icon-translation:before{
+    font-family:Super;content:"\0047";
+}
+.icon-narrow:before{
+    font-family:Super;content:"\004D";
+}
+.icon-property:before{
+    font-family:Super;content:"\003C";
+}
+.icon-point:before{
+    font-family:Super;content:"\0048";
+}
+.icon-rectangle:before{
+    font-family:Super;content:"\0049";
+}
+.icon-identifyCircle:before{
+    font-family:Super;content:"\0128";
+}
+.icon-identifyRegion:before{
+    font-family:Super;content:"\0127";
+}
+.icon-circle:before{
+    font-family:Super;content:"\004A";
+}
+.icon-polygon:before{
+    font-family:Super;content:"\004B";
+}
+.icon-full:before{
+    font-family:Super;content:"\0052";
+}
+.icon-measureDistance:before{
+    font-family:Super;content:"\004F";
+}
+.icon-measureSurface:before{
+    font-family:Super;content:"\0050";
+}
+.icon-clear:before{
+    font-family:Super;content:"\0051";
+}
+.icon-left-fixArrow:before{
+    font-family:Super;content:"\0065";
+}
+.icon-bottom-fixArrow:before{
+    font-family:Super;content:"\0063";
+}
+.icon-right-fixArrow:before{
+    font-family:Super;content:"\0066";
+}
+.icon-top-fixArrow:before{
+    font-family:Super;content:"\0064";
+}
+.icon-nextPage-fixArrow:before{
+    font-family:Super;content:"\006B";
+}
+.icon-prePage-fixArrow:before{
+    font-family:Super;content:"\006C";
+}
+.icon-pause:before{
+    font-family:Super;content:"\011B";
+}
+.icon-cancle:before{
+    font-family:Super;content:"\0115";
+}
+.icon-retry:before{
+    font-family:Super;content:"\011C";
+}
+.icon-re-import:before{
+    font-family:Super;content:"\011A";
+}
+.icon-resume:before{
+    font-family:Super;content:"\011D";
+}
+.icon-stop:before{
+    font-family:Super;content:"\0114";
+}
+.icon-start:before{
+    font-family:Super;content:"\0117";
+}
+.icon-create:before{
+    font-family:Super;content:"\0119";
+}
+.icon-style-assert:before{
+    font-family:Super;content:"\0101";
+}
+.icon-flash:before{
+    font-family:Super;content:"\006E";
+}
+.icon-clearAll:before{
+    font-family:Super;content:"\006F";
+}
+.icon-add:before{
+    font-family:Super;content:"\0069";
+}
+.icon-vecService:before{
+    font-family:Super;content:"\0103";
+}
+.icon-WMSService:before{
+    font-family:Super;content:"\0079";
+}
+.icon-WMTSService:before{
+    font-family:Super;content:"\007A";
+}
+.icon-editInfo:before{
+    font-family:Super;content:"\00B3";
+}
+.icon-deleteGraphic:before{
+    font-family:Super;content:"\0078";
+}
+.icon-addGraphic:before{
+    font-family:Super;content:"\0076";
+}
+.icon-drawPoint:before{
+    font-family:Super;content:"\0070";
+}
+.icon-drawLine:before{
+    font-family:Super;content:"\0071";
+}
+.icon-drawPolygon:before{
+    font-family:Super;content:"\0072";
+}
+.icon-drawRect:before{
+    font-family:Super;content:"\0073";
+}
+.icon-drawCricle:before{
+    font-family:Super;content:"\0075";
+}
+.icon-drawEllipse:before{
+    font-family:Super;content:"\0074";
+}
+.icon-viewInfo:before{
+    font-family:Super;content:"\00A3";
+}
+.icon-spaceInfo:before{
+    font-family:Super;content:"\007D";
+}
+.icon-queryInfo:before{
+    font-family:Super;content:"\00B4";
+}
+.icon-spaceQuery:before{
+    font-family:Super;content:"\00AC";
+}
+.icon-bufferAnalysis:before{
+    font-family:Super;content:"\0044";
+}
+.icon-compositionAnalysis:before{
+    font-family:Super;content:"\0045";
+}
+.icon-visual:before{
+    font-family:Super;content:"\0036";
+}
+.icon-dataSourceManager:before{
+    font-family:Super;content:"\0034";
+}
+.icon-dataAssertsManager:before{
+    font-family:Super;content:"\003E";
+}
+.icon-mapManager:before{
+    font-family:Super;content:"\0035";
+}
+.icon-superList:before{
+    font-family:Super;content:"\00B5";
+}
+.icon-imageService:before{
+    font-family:Super;content:"\0108";
+}
+.icon-minus:before{
+    font-family:Super;content:"\006A";
+}
+.icon-user:before{
+    font-family:Super;content:"\0061";
+}
+.icon-password:before{
+    font-family:Super;content:"\0060";
+}
+.icon-delete:before{
+    font-family:Super;content:"\005A";
+}
+.icon-file:before{
+    font-family:Super;content:"\0109";
+}
+.icon-move:before{
+    font-family:Super;content:"\011F";
+}
+.icon-rotate:before{
+    font-family:Super;content:"\0120";
+}
+.icon-handDraw:before{
+    font-family:Super;content:"\0121";
+}
+.icon-finishEdit:before{
+    font-family:Super;content:"\0114";
+}
+.icon-editGraphic:before{
+    font-family:Super;content:"\0077";
+}
+.icon-upload:before{
+    font-family:Super;content:"\0122";
+}
+.icon-layer:before{
+    font-family:Super;content:"\003D";
+}
+.icon-close:before{
+    font-family:Super;content:"\0067";
+}
+.icon-pos:before{
+  font-family:Super;content:"\005D";
+}
+.clipLine:before{
+  font-family:Super;content:"\012B";
+}
+.clipPolygon:before{
+  font-family:Super;content:"\012A";
+}

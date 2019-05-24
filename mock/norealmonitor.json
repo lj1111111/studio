@@ -1,0 +1,33 @@
+{
+	"state": 0,
+	"features": [
+		{
+			"type": "Feature",
+			"geometry": {
+				"type": "LineString",
+				"coordinates": [
+					[
+						120.358966286,
+						30.3045402896
+					],
+					[
+						120.359043714,
+						30.304692719
+					]
+				]
+			},
+			"properties": {
+				"id": "abcdefg",
+				"time": [
+					1517580400,
+					1517580401
+				],
+				"type": "C1",
+				"state": [
+					true,
+					true
+				]
+			}
+		}
+	]
+}

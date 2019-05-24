@@ -1,0 +1,853 @@
+{
+	"company": "苏州超擎图形软件科技发展有限公司",
+	"version": "v1.0.0",
+	"memo": "苏州超擎组件库",
+	"img_root": "./static/img/",
+	"route": "",
+	"componentlibs": {
+		"base_component": {
+			"name": "基本组件",
+			"list": [
+				{
+					"label": "图片",
+					"name": "se-image",
+					"url": "se-image.png",
+					"elementType": "img",
+					"defaultData": {
+						"option": {
+							"imageBackSizeType": 1
+						},
+						"location": {}
+					}
+				}, {
+					"label": "视频",
+					"name": "se-video",
+					"url": "se-video.png",
+					"unRealize": true,
+					"elementType": "video"
+				}, {
+					"label": "标题",
+					"name": "se-title",
+					"url": "se-title.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"titleColor": "#EFE7E7",
+							"title": "超擎",
+							"titleSize": 36,
+							"titleWeight": "normal"
+						},
+						"location": {}
+					}
+				}, {
+					"label": "键值表格",
+					"name": "se-table",
+					"url": "se-table.png",
+					"unRealize": true,
+					"elementType": "table"
+				}, {
+					"label": "容器",
+					"name": "se-panel",
+					"url": "se-panel.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"showBackColor": false,
+							"backColor": "rgba(20,20,20,1)",
+							"borderColor": "#76EDFF",
+							"borderWidth": 3,
+							"sePanelBorderType": 0,
+							"onlyShowBorderTopAndBottom": false
+						},
+						"location": {}
+					}
+				}, {
+					"label": "水平线",
+					"name": "se-Hline",
+					"url": "se-line.png",
+					"unRealize": false,
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"backColor": "rgba(20,20,20,1)",
+							"direction": "h"
+						},
+						"location": {}
+					}
+				}
+			]
+		},
+		"chart_component": {
+			"name": "图表组件",
+			"list": [
+				{
+					"label": "柱状图",
+					"name": "se-bar",
+					"url": "se-bar.png",
+					"elementType": "div",
+					"chartType": "bar",
+					"defaultData": {
+						"barType": "h",
+						"dataType": 1,
+						"option": {
+							"title": {
+								"text": "",
+								"textStyle": {
+									"color": "#EFE7E7"
+								}
+							},
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#91c7ae",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3"
+							],
+							"tooltip": {
+								"trigger": "axis",
+								"axisPointer": {
+									"type": "shadow"
+								}
+							},
+							"legend": [
+								{
+									"show": true,
+									"data": [
+										"直接访问1",
+										"直接访问2"
+									],
+									"textStyle": {
+										"color": "#EFE7E7"
+									},
+									"orient": "horizontal",
+									"left": "center"
+								}
+							],
+							"textStyle": {
+								"color": "#EFE7E7"
+							},
+							"backgroundColor": "",
+							"grid": {
+								"show": false,
+								"top": "30",
+								"left": "10",
+								"right": "10",
+								"bottom": "10",
+								"containLabel": true
+							},
+							"xAxis": [
+								{
+									"show": true,
+									"type": "category",
+									"data": [
+										"Tue",
+										"Wed",
+										"Thu",
+										"Fri",
+										"Sat",
+										"Sun"
+									],
+									"axisTick": {
+										"alignWithLabel": true
+									},
+									"splitLine": {
+										"show": false,
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"axisLine": {
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									}
+								}, {
+									"show": false,
+									"type": "category",
+									"data": [
+										"Tue",
+										"Wed",
+										"Thu",
+										"Fri",
+										"Sat",
+										"Sun"
+									],
+									"axisTick": {
+										"alignWithLabel": true
+									},
+									"splitLine": {
+										"show": false,
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"axisLine": {
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									}
+								}
+							],
+							"yAxis": [
+								{
+									"axisLine": {
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"type": "value",
+									"splitLine": {
+										"show": false,
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"show": true,
+									"scale": false
+								}, {
+									"axisLine": {
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"type": "value",
+									"splitLine": {
+										"show": false,
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"show": false,
+									"scale": false
+								}
+							],
+							"series": [
+								{
+									"label": {
+										"normal": {
+											"show": false,
+											"position": "inside",
+											"color": "#EFE7E7"
+										}
+									},
+									"barMaxWidth": "60%",
+									"itemStyle": {
+										"normal": {
+											"color": ""
+										}
+									},
+									"name": "直接访问1",
+									"type": "bar",
+									"data": [
+										52,
+										200,
+										334,
+										390,
+										330,
+										220
+									]
+								}, {
+									"label": {
+										"normal": {
+											"show": false,
+											"position": "inside",
+											"color": "#EFE7E7"
+										}
+									},
+									"barMaxWidth": "60%",
+									"name": "直接访问2",
+									"type": "bar",
+									"yAxisIndex": 0,
+									"data": [
+										52,
+										200,
+										334,
+										390,
+										330,
+										220
+									]
+								}
+							]
+						},
+						"location": {}
+					}
+				},  {
+					"label": "折线图",
+					"name": "se-line",
+					"url": "se-line.png",
+					"elementType": "div",
+					"chartType": "line",
+					"defaultData": {
+						"option": {
+							"title": {
+								"text": "",
+								"textStyle": {
+									"color": "#EFE7E7"
+								}
+							},
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#91c7ae",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3"
+							],
+							"tooltip": {
+								"trigger": "axis",
+								"axisPointer": {
+									"type": "shadow"
+								}
+							},
+							"legend": [
+								{
+									"show": true,
+									"data": [
+										"直接访问",
+										"搜索引擎"
+									],
+									"textStyle": {
+										"color": "#EFE7E7"
+									},
+									"orient": "horizontal",
+									"left": "center"
+								}
+							],
+							"textStyle": {
+								"color": "#EFE7E7"
+							},
+							"backgroundColor": "",
+							"grid": {
+								"show": false,
+								"top": "30",
+								"left": "10",
+								"right": "10",
+								"bottom": "10",
+								"containLabel": true
+							},
+							"xAxis": [
+								{
+									"show": true,
+									"type": "category",
+									"data": [
+										"周一",
+										"周二",
+										"周三",
+										"周四",
+										"周五",
+										"周六",
+										"周日"
+									],
+									"axisTick": {
+										"alignWithLabel": true
+									},
+									"splitLine": {
+										"show": false,
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"axisLine": {
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									}
+								}
+							],
+							"yAxis": [
+								{
+									"axisLine": {
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"type": "value",
+									"splitLine": {
+										"show": false,
+										"lineStyle": {
+											"color": "#1E1D1D"
+										}
+									},
+									"show": true
+								}
+							],
+							"series": [
+								{
+									"name": "直接访问",
+									"type": "line",
+									"label": {
+										"normal": {
+											"show": false,
+											"position": "top",
+											"color": "#EFE7E7"
+										}
+									},
+									"data": [
+										120,
+										132,
+										101,
+										134,
+										90,
+										230,
+										210
+									]
+								}, {
+									"name": "搜索引擎",
+									"type": "line",
+									"label": {
+										"normal": {
+											"show": false,
+											"position": "top",
+											"color": "#EFE7E7"
+										}
+									},
+									"data": [
+										220,
+										182,
+										191,
+										234,
+										290,
+										330,
+										310
+									]
+								}
+							]
+						},
+						"location": {}
+					}
+				},{
+					"label": "饼图",
+					"name": "se-pie",
+					"url": "se-pie.png",
+					"elementType": "div",
+					"chartType": "pie",
+					"defaultData": {
+						"source": [
+							{
+								"catalog": "类别",
+								"data": [
+									{
+										"value": 100,
+										"name": "类别1"
+									}, {
+										"value": 120,
+										"name": "类别2"
+									}, {
+										"value": 150,
+										"name": "类别3"
+									}
+								]
+							}
+						],
+						"option": {
+							"title": {
+								"text": "",
+								"textStyle": {
+									"color": "#EFE7E7"
+								}
+							},
+							"color": [
+								"#c23531",
+								"#61a0a8",
+								"#d48265",
+								"#91c7ae",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#2f4554"
+							],
+							"tooltip": {
+								"trigger": "item",
+								"formatter": "{b} : {c} ({d}%)",
+								"axisPointer": {
+									"type": "shadow"
+								}
+							},
+							"legend": [
+								{
+									"show": true,
+									"data": [
+										"类别1",
+										"类别2",
+										"类别3"
+									],
+									"textStyle": {
+										"color": "#EFE7E7"
+									},
+									"orient": "horizontal",
+									"left": "center"
+								}
+							],
+							"textStyle": {
+								"color": "#EFE7E7"
+							},
+							"backgroundColor": "",
+							"grid": {
+								"top": "3%",
+								"left": "3%",
+								"right": "3%",
+								"bottom": "3%",
+								"containLabel": true
+							},
+							"series": [
+								{
+									"type": "pie",
+									"radius": "50%",
+									"center": [
+										"50%",
+										"60%"
+									],
+									"label": {
+										"normal": {
+											"show": true,
+											"position": "outside"
+										}
+									},
+									"data": [
+										{
+											"value": 100,
+											"name": "类别1"
+										}, {
+											"value": 120,
+											"name": "类别2"
+										}, {
+											"value": 150,
+											"name": "类别3"
+										}
+									]
+								}
+							]
+						},
+						"location": {}
+					}
+				}, {
+					"label": "仪表盘",
+					"name": "se-gauge",
+					"url": "se-gauge.png",
+					"elementType": "div",
+					"chartType": "gauge",
+					"defaultData": {
+						"source": [
+							{
+								"catalog": "类别",
+								"data": {
+									"value": 86,
+									"name": "GDP\n发展指数"
+								},
+								"splitData": [
+									50,
+									90,
+									100
+								]
+							}
+						],
+						"option": {
+							"title": {
+								"text": "",
+								"textStyle": {
+									"color": "#EFE7E7"
+								}
+							},
+							"tooltip": {
+								"formatter": "{b} : {c}"
+							},
+							"textStyle": {
+								"color": "#EFE7E7"
+							},
+							"color": [
+								"#dd0000",
+								"#eeee00",
+								"#33ee88",
+								"#d48265",
+								"#91c7ae",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3"
+							],
+							"backgroundColor": "",
+							"grid": {
+								"show": false,
+								"top": "3%",
+								"left": "3%",
+								"right": "3%",
+								"bottom": "3%",
+								"containLabel": true
+							},
+							"series": [
+								{
+									"title": {
+										"show": false,
+										"color": "#EFE7E7",
+										"fontSize": 20
+									},
+									"radius": "90%",
+									"center": [
+										"50%",
+										"55%"
+									],
+									"type": "gauge",
+									"min": 0,
+									"max": 100,
+									"splitNumber": 10,
+									"axisLine": {
+										"lineStyle": {
+											"color": [
+												[
+													0.5,
+													"#dd0000"
+												],
+												[
+													0.9,
+													"#eeee00"
+												],
+												[
+													1,
+													"#33ee88"
+												]
+											],
+											"width": 10
+										}
+									},
+									"splitLine": {
+										"show": true,
+										"length": 15,
+										"lineStyle": {
+											"color": "auto"
+										}
+									},
+									"axisTick": {
+										"length": 10,
+										"splitNumber": 5,
+										"lineStyle": {
+											"color": "auto"
+										},
+										"show": true
+									},
+									"detail": {
+										"fontSize": 20,
+										"formatter": "{value}",
+										"show": true,
+										"color": "#EFE7E7"
+									},
+									"data": [
+										{
+											"value": 86,
+											"name": "GDP\n发展指数"
+										}
+									]
+								}
+							]
+						},
+						"location": {}
+					}
+				}
+			]
+		},
+		"space_component": {
+			"name": "时空组件",
+			"list": [
+				{
+					"label": "地图",
+					"name": "se-map",
+					"url": "se-map.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"mapX": 0,
+							"mapY": 0,
+							"mapZoom": 0
+						},
+						"location": {}
+					}
+				}, {
+					"label": "时空热力图",
+					"name": "se-ts-heatmap",
+					"url": "se-ts-heatmap.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"title": "时空热力图",
+							"showTitle": true,
+							"titleLocation": "column",
+							"titleColor": "#EFE7E7",
+							"titleSize": 12,
+							"showBackColor": false,
+							"backColor": "rgba(20,20,20,1)",
+							"useCustomPic": false
+						},
+						"location": {}
+					}
+				}, {
+					"label": "时空分析",
+					"name": "se-ts-analysis",
+					"url": "se-ts-analysis.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"title": "时空分析",
+							"showTitle": true,
+							"titleLocation": "column",
+							"titleColor": "#EFE7E7",
+							"titleSize": 12,
+							"showBackColor": false,
+							"backColor": "rgba(20,20,20,1)",
+							"useCustomPic": false
+						},
+						"location": {}
+					}
+				}, {
+					"label": "快速定位",
+					"name": "se-quickLocation",
+					"url": "se-quickLocation.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"title": "快速定位",
+							"showTitle": true,
+							"titleLocation": "column",
+							"titleColor": "#EFE7E7",
+							"titleSize": 12,
+							"showBackColor": false,
+							"backColor": "rgba(20,20,20,1)",
+							"showBorder": false,
+							"borderWidth": 2,
+							"borderColor": "rgba(20,20,20,1)"
+						},
+						"location": {}
+					}
+				}, {
+					"label": "叠加路网",
+					"name": "se-addRoute",
+					"url": "se-addRoute.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"title": "叠加路网",
+							"showTitle": true,
+							"titleLocation": "column",
+							"titleColor": "#EFE7E7",
+							"titleSize": 12,
+							"showBackColor": false,
+							"backColor": "rgba(20,20,20,1)",
+							"useCustomPic": false
+						},
+						"location": {}
+					}
+				}, {
+					"label": "专题图",
+					"name": "se-chartTheme",
+					"url": "se-chartTheme.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"showButton": false,
+							"title": "专题图",
+							"showTitle": true,
+							"titleLocation": "column",
+							"titleColor": "#EFE7E7",
+							"titleSize": 12,
+							"showBackColor": false,
+							"backColor": "rgba(20,20,20,1)",
+							"useCustomPic": false,
+
+							"chartSymbolConfig": {
+								"enable": true,
+								"fields": [],
+								"minScale": 0,
+								"maxScale": 18,
+
+								"showlegend": true,
+								"legendposition": "bottomright",
+								"showTooltip": true,
+								"symbol": {
+									"type": "bar",
+									"use3D": true,
+									"thickness": 5,
+									"width": 15,
+									"space": 0,
+									"maxH": 150
+								}
+							}
+						},
+						"location": {}
+					}
+				}, {
+					"label": "分级符号",
+					"name": "se-gradeSizeTheme",
+					"url": "se-gradeSizeTheme.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"showButton": false,
+							"title": "分级符号",
+							"showTitle": true,
+							"titleLocation": "column",
+							"titleColor": "#EFE7E7",
+							"titleSize": 12,
+							"showBackColor": false,
+							"backColor": "rgba(20,20,20,1)",
+							"useCustomPic": false,
+
+							"gradeThemeConfig": {
+								"showlegend": true,
+								"enable": true,
+								"field": "",
+								"minSize": 0,
+								"maxSize": 18,
+								"classifyNum": 1,
+								"color": "rgba(48,131, 235,1)"
+							}
+						},
+						"location": {}
+					}
+				}, {
+					"label": "分级色彩",
+					"name": "se-gradeColorTheme",
+					"url": "se-gradeColorTheme.png",
+					"elementType": "div",
+					"defaultData": {
+						"option": {
+							"showButton": false,
+							"title": "分级色彩",
+							"showTitle": true,
+							"titleLocation": "column",
+							"titleColor": "#EFE7E7",
+							"titleSize": 12,
+							"showBackColor": false,
+							"backColor": "rgba(20,20,20,1)",
+							"useCustomPic": false,
+
+							"gradeThemeConfig": {
+								"showlegend": true,
+								"enable": true,
+								"field": "",
+								"minSize": 0,
+								"maxSize": 18,
+								"classifyNum": 1,
+								"color": []
+							}
+						},
+						"location": {}
+					}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,304 @@
+/*.el-scrollbar__wrap {
+	overflow-x: hidden;
+}*/
+
+.el-tabs__item {
+	padding: 0 20px;
+	height: 52px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: 52px;
+	display: inline-block;
+	list-style: none;
+	font-size: 18px;
+	font-weight: 500;
+	color: #303133;
+	position: relative;
+}
+
+.el-tabs--border-card {
+	box-sizing: border-box;
+	background: #fff;
+	border: 1px solid #dcdfe6;
+	-webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, .12), 0 0 0px 0 rgba(0, 0, 0, .04);
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, .12), 0 0 0px 0 rgba(0, 0, 0, .04);
+}
+
+.el-tabs--border-card>.el-tabs__content {
+	padding: 0px;
+}
+
+
+/*.tai_message_layout {
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+}
+
+.tai_message_layout .el-tabs {
+	height: 100%;
+	width: 100%;
+}
+
+.tai_message_layout .el-tabs__content {
+	height: calc(100% - 60px);
+	width: 100%;
+}
+
+.tai_message_layout .el-tab-pane {
+	width: 100%;
+	height: 100%;
+}
+
+.tai_message_layout .el-tabs__nav-scroll {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}*/
+
+
+/*地图弹出框*/
+
+.c-popup-div {
+	width: 400px;
+}
+
+.c-popup-title {
+	width: 280px;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	border-bottom: 1px solid #999999;
+	background: url("../images/device_info.png") no-repeat;
+	background-size: 20px;
+	background-position-y: 50%;
+	padding-left: 25px;
+}
+
+.c-popup-item {
+	width: 300px;
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+	overflow: hidden;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.c-popup-div button {
+	margin-left: 29%;
+	margin-top: 10px;
+	background-color: #409eff;
+	color: #ffffff;
+	border: 0;
+	font-size: 14px;
+	border-radius: 5px;
+	padding: 2px 20px;
+}
+
+
+/*自定义进度条*/
+
+.dragbox {
+	width: 200px;
+	position: relative;
+	height: 8px;
+	background-color: red;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.progress {
+	background: #CDCDCD;
+	margin-bottom: 0px;
+	height: 8px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+.progressbar {
+	background-color: #409EFF;
+	float: left;
+	width: 0;
+	height: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	text-align: center;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+	-webkit-transition: width .6s ease;
+	-o-transition: width .6s ease;
+	transition: width .6s ease;
+}
+
+.bardrag {
+	position: absolute;
+	top: -3px;
+	left: 10px;
+	display: inline-block;
+	height: 12px;
+	width: 10px;
+	background-color: #409EFF;
+	border: 1px solid #e1e0de;
+	border-radius: 10px;
+	cursor: e-resize;
+}
+
+.dragnum {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.nowbar {
+	margin-top: 10px;
+}
+
+
+/*.el-dialog--center .el-dialog__body {
+	padding: 15px 25px 15px;
+}*/
+
+
+/*.el-dialog__title {
+	font-family: NSimSun;
+	font-weight: bold;
+	color: #409EFF;
+}*/
+
+
+/*.el-table__body-wrapper {
+	height: 249px;
+	overflow-y: auto;
+}*/
+
+
+/*.el-button {
+	padding: 6px 25px;
+	font-size: 12px;
+}*/
+
+
+/*.el-select-dropdown__list {
+	padding-bottom: 20px;
+}*/
+
+.item-list {
+	padding: 0px 0;
+	background-color: #FFF;
+}
+
+.track-split-item {
+	font-size: 14px;
+	padding: 8px 14px;
+	overflow: hidden auto;
+	background-color: #FFF;
+}
+
+.track-split-item-line {
+	border-top: 1px solid #dcdfe6;
+	margin-top: 8px;
+	/*padding: 4px 14px 0px 14px;*/
+}
+
+.track-split-item-line-bootom {
+	border-top: none;
+	border-bottom: 1px solid #dcdfe6;
+}
+
+
+/*.el-tabs__header {
+	padding: 0;
+	position: relative;
+	margin: 0;
+}*/
+
+.tr-center {
+	overflow: hidden;
+}
+
+.tr-center::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+.tr-center::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+	-webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+	background: #c0c4cc;
+}
+
+
+/***
+ * 
+ */
+
+.my-autocomplete {
+	li {
+		line-height: normal;
+		width: 100%;
+		/*padding: 7px;*/
+		.name {
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		.addr {
+			font-size: 12px;
+			color: #b4b4b4;
+		}
+		.highlighted .addr {
+			color: #ddd;
+		}
+	}
+}
+
+
+/***
+ * 车速组件
+ */
+
+.speed-info {
+	color:#000000;
+	background-color: #FFF;
+	padding: 4px;
+}
+
+.speed-info-title {
+	text-align: center;
+	margin-bottom: 4px;
+}
+
+.speed-info-content-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.speed-info-content-left {
+	border-radius: 5px;
+	height: 160px;
+	width: 10px;
+	background: -webkit-linear-gradient(#00CE33, #FFCE0A, #EB0911, #8B0F05);
+	/* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#00CE33, #FFCE0A, #EB0911, #8B0F05);
+	/* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(#00CE33, #FFCE0A, #EB0911, #8B0F05);
+	/* Firefox 3.6 - 15 */
+	background: linear-gradient(#00CE33, #FFCE0A, #EB0911, #8B0F05);
+	/* 标准的语法 */
+}
+
+.speed-info-content-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 160px;
+	padding-left: 4px;
+	font-size: 14px;
+}

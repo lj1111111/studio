@@ -1,0 +1,90 @@
+* {
+	/*box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;*/
+	/*margin: 0;
+	padding: 0;*/
+	/*font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;*/
+}
+
+html,
+body {
+	
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	min-width: 1024px;
+	min-height: 768px;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+
+/****
+ * 左侧容器
+ */
+
+.left-container {
+	width: 160px;
+	height: calc(100% - 70px);
+	background-color: #F7F8FA;
+}
+
+
+/****
+ * 右侧容器
+ */
+
+.right-container {
+	width: 360px;
+	height: calc(100% - 70px);
+	background-color: #F7F8FA;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	display: inline-block;
+	border-left: solid 1px #DCDEE3;
+	overflow:auto;
+}
+
+.right-container::-webkit-scrollbar {
+	/*滚动条整体样式*/
+	width: 4px;
+	/*高宽分别对应横竖滚动条的尺寸*/
+	height: 1px;
+}
+
+.right-container::-webkit-scrollbar-thumb {
+	/*滚动条里面小方块*/
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+	background: #868282c4;
+}
+
+.right-container::-webkit-scrollbar-track {
+	/*滚动条里面轨道*/
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	background: #EDEDED;
+}
+/***
+ * 组件选中时样式
+ */
+
+.component-selected {
+	border: 1px solid #13CE66;
+	/*background-color: rgba(51, 201, 169, 0.8);*/
+}
+
+.component-unselected {
+	/*border: 1px solid rgba(127, 127, 127, 0.8);*/
+	/*background-color: rgba(127, 127, 127, 0.5);*/
+}
+
+
+
+.test-div {
+	background-image: url(../img/thumb.png);
+}

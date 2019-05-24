@@ -1,0 +1,104 @@
+/***
+ * 右边坐标样式文件
+ */
+
+.right-component-containter {
+	background-color: #FCFCFB;
+	height: 100%;
+}
+
+.right-component-header {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 18px;
+}
+
+.right-component-header>div {
+	flex: 1;
+	cursor: pointer;
+	padding: 10px;
+}
+
+.right-component-item-header>span {
+	cursor: pointer;
+}
+
+.right-component-header-tab-selected {
+	background-color: #106ba9; 
+	color: #FFF;
+}
+
+.right-component-labelInfo {
+	font-size: 18px;
+	padding: 10px;
+	border-top: solid 1px #DCDEE3;
+}
+
+.right-component-item-header {
+	font-size: 16px;
+	padding: 10px;
+	border-top: solid 1px #DCDEE3;
+}
+
+.right-component-item-header-checked {
+	padding: 10px 30px 10px 10px;
+	border-top: solid 1px #DCDEE3;
+}
+
+.right-component-item {
+	font-size: 14px;
+	padding: 4px 30px;
+}
+
+.right-component-item-color {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.right-component-item-content {
+	background-color: #F3F5F6;
+}
+
+
+/**
+ * 子内容分割线
+ */
+
+.right-component-item-splitline {
+	margin: 0 0 1px 26px;
+	border-bottom: solid 1px #DCDEE3;
+}
+/**
+ * 一级子内容分割线
+ */
+
+.right-component-item-splitline-step1 {
+	border-top: solid 1px #DCDEE3;
+}
+/**
+ * 二级子内容分割线
+ */
+
+.right-component-item-splitline-step2 {
+	margin: 0 0 1px 26px;
+	border-top: solid 1px #DCDEE3;
+}
+/***
+ * 二级子内容
+ */
+.right-component-item-step2 {
+	font-size: 14px;
+	padding: 4px 30px 4px 0px;
+}
+
+/**
+ * 组件头部字体大小为18px，一级标题大小为16px 正文内容为14px
+ */
+
+.comp-right-component-item {
+	font-size: 14px;
+	padding: 4px 20px;
+}
