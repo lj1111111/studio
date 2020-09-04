@@ -24,7 +24,7 @@
     "jsoneditor": "^5.15.0",
     "leaflet.pm": "^0.25.0",
     "moment": "^2.22.2",
-    "papaparse": "^4.4.0",
+    "papaparse": "^5.2.0",
     "popojs": "^1.0.1",
     "tinycolor2": "^1.4.1",
     "video.js": "^7.0.3",
